@@ -24,7 +24,7 @@ app.use('/posts', postRoutes);
 // });
 
 
-app.listen(8000, async () => {
+app.listen(process.env.PORT, async () => {
   try{
       await connection
       console.log("connected to DB successfully")
@@ -33,7 +33,7 @@ app.listen(8000, async () => {
       console.log("error while connecting to DB")
       console.log(err)
   }
-  console.log("Listening on port 8000")
+  console.log(`Listening on port ${process.env.PORT}`)
 })
 
 
